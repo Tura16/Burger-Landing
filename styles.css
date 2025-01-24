@@ -309,7 +309,7 @@ img {
 
 @media (max-width: 600px) {
     .product .container {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: 1fr;
     }
 }
 
