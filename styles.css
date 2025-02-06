@@ -27,6 +27,14 @@
 
 /* ! Общие стили */
 
+html, body {
+    overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: "Roboto", sans-serif;
@@ -69,10 +77,9 @@ img {
 
 .container {
     box-sizing: border-box;
-
+    width: 100%;
     max-width: 1170px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
     padding: 0 15px;
 }
 
@@ -124,6 +131,43 @@ img {
     align-items: center;
 }
 
+.header__burger-menu {
+    display: none;
+}
+
+.header__burger-menu span {
+    position: absolute;
+    width: 40px;
+    height: 3px;
+    background-color: #f6762c;
+    left: 5px;
+    transition: transform .5s, opacity .5s, background-color .5s;
+}
+
+.header__burger-menu span:nth-child(1) {
+    transform: translateY(-10px);
+}
+
+.header__burger-menu span:nth-child(3) {
+    transform: translateY(10px);
+}
+
+.header.open .header__burger-menu span {
+    background-color: #fff;
+}
+
+.header.open .header__burger-menu span:nth-child(1) {
+    transform: translateY(0) rotate(45deg);
+}
+
+.header.open .header__burger-menu span:nth-child(2) {
+    opacity: 0;
+}
+
+.header.open .header__burger-menu span:nth-child(3) {
+    transform: translateY(0) rotate(-45deg);
+}
+
 .header__list {
     display: flex;
     gap: 30px;
@@ -153,11 +197,11 @@ img {
     box-sizing: border-box ;
     max-height: 100vh;
 
-    padding: 240px 0;
     margin-top: -100px;
     padding: 220px 0px 330px 0px;
 
     background-image: url("/images/burger.png");
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     
@@ -245,12 +289,9 @@ img {
     padding: 60px 0;
 }
 
-.order__img {
-    max-width: 483px;
-}
-
 .order__text {
     max-width: 370px;
+    margin-left: 90px;
 }
 
 .order__title {
@@ -291,8 +332,6 @@ img {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    padding-right: 90px;
 }
 
 /* ! PRODUCT */
@@ -304,25 +343,21 @@ img {
 .product .container {
     display: grid;
     grid-template-columns: 555px 555px;
+    grid-auto-rows: minmax(300px, auto);
     gap: 30px;
-}
-
-@media (max-width: 600px) {
-    .product .container {
-        grid-template-columns: 1fr;
-    }
 }
 
 .product__card {
     background-color: #6b6060;
-
     background-size: cover;
     background-repeat: repeat;
     background-position: center;
+
+    border-radius: 20px;
 }
 
 .product__card, .card-queen, .card-burger  {
-    max-width: 550px;
+    max-width: 555px;
     max-height: 300px;
 
     padding: 63px 1px 61px 290px;
@@ -330,13 +365,9 @@ img {
 
 .card-pizza, .card-papajohn {
     padding: 63px 251px 60px 50px;
-    max-width: 550px;
+    max-width: 555px;
     max-height: 300px;
 } 
-
-.product1__img {
-
-}
 
 .product__title {
     font-size: 30px;
@@ -346,10 +377,6 @@ img {
 .product__desc {
     opacity: 0.7;
     margin-bottom: 11px;
-}
-
-.product__price {
-
 }
 
 .product__price + .product__price {
@@ -554,9 +581,480 @@ img {
 
 /** Медиа Адаптация */
 
-@media (max-width: 950px) {
+@media (max-width: 1400px) {
+    .footer .container {
+        display: flex;
+        justify-content: space-around;
+        text-align: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 60px;
+    } 
+
+    .footer__socials {
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 1221px) {
+    .footer__contacts {
+        text-align: center;
+        align-items: center;
+        padding-right: 0;
+    }
+
+    .footer_logo {
+        margin-bottom: 0px;
+    }
+}
+
+@media (max-width: 1170px) {
+    .product .container {
+        grid-template-columns: repeat(auto-fill, minmax(555px,max-content));
+        justify-content: center;
+    }
+}
+
+@media (max-width: 1080px) {
     .welcome__desc {
-        opacity: 1;
+        width: 480px;
+    }
+}
+
+@media (max-width: 990px) {
+    .welcome__title {
+        font-size: 50px;
+    }
+
+    .welcome__desc {
+        width: 435px;
+    }
+}
+
+@media (max-width: 890px) {
+    .welcome__title {
+        font-size: 40px;
+        width: 356px;
+        margin-bottom: 30px;
+    }
+
+    .welcome__subtitle {
+         margin-bottom: 15px;
+    }
+
+    .welcome__desc {
+        width: 380px;
+        font-size: 16px;
+    }
+
+    .order__img {
+        max-width: 100%;
+        width: 400px;
+    }
+
+    .footer__nav-list {
+        gap: 90px;
+    }
+}
+
+@media (max-width: 839px) {
+    .food-list .container {
+        justify-content: space-around;
+    }
+
+    .order__title {
+        font-size: 38px;
+    }
+}
+
+@media (max-width: 768px) {
+    .welcome__desc {
+        width: 300px;
+    }
+
+    .order__img {
+        max-width: 100%;
+        width: 350px;
+    }
+
+    .order__title {
+        font-size: 36px;
+    }
+
+    .order__desc {
+        font-size: 14px;
+    }
+
+    .order__price {
+        font-size: 16px;
+    }
+
+    .btn {
+        width: 145px;
+        height: 40px;
+    }
+
+    .feedback .container {
+        display: flex;
+        flex-direction: column;
+        gap: 90px;
+    }
+
+    .feedback__text {
+        padding-left: 30px;
+    }
+
+    .download__menu h5 {
+        font-size: 28px;
+    }
+
+    .footer .container {
+        flex-direction: column;
+        width: 175px;
+        text-align: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 690px) {
+    .header__burger-menu {
+        display: inline-block;
+        position: relative;
+        width: 40px;
+        height: 40px;
+        border: none;
+        background-color: transparent;
+        z-index: 2;
+        cursor: pointer;     
+    }
+
+    .header__nav {
+        position: absolute;
+        width: 230px;
+        left: -230px;
+        top: 0;
+        background-color: #875318;
+        padding: 15px 15px 5px 75px;
+        transition: transform .5s;
+        border-radius: 210px 15px 280px 15px;
+    }
+
+    .header__list {
+        display: block;
+    }
+
+    .header__link {
+        color: #fff;
+        font-size: 21px;
+        display: block;
+        padding: 10px 0;
+    }
+
+    .header.open .header__nav {
+        transform: translateX(100%);
+    }
+}
+
+@media (max-width: 660px) {
+    .welcome__title {
+        font-size: 38px;
+    }
+
+    .order__img {
+        max-width: 100%;
+        width: 300px;
+    }
+}
+
+@media (max-width: 640px) {
+    .welcome__desc {
+        width: 210px;
+    }
+
+    .welcome__title {
+        font-size: 38px;
+        width: 249px;
+        margin-bottom: 35px;
+    }
+
+    .welcome__subtitle {
+        margin-bottom: 20px;
+    }
+
+    .order__title {
+        font-size: 34px;
+    }
+
+    .order__desc {
+        font-size: 13px;
+    }
+
+    .order__price {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .order__img {
+        max-width: 100%;
+        width: 270px;
+    }
+
+    .order__title {
+        font-size: 28px;
+    }
+
+    .order__desc {
+        font-size: 12px;
+    }
+
+    .btn {
+        width: 114px;
+        height: 35px;
+        font-size: 13px
+    }
+
+    .order__text {
+        margin-left: 60px;
+    }
+
+    .product .container {
+        grid-template-columns: repeat(auto-fill, minmax(350px,max-content));
+    }
+
+    .product__title {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .product__desc {
+        font-size: 14px;
+    }
+
+    .product__price,
+    .product__price--old {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 540px) {
+    .order__img {
+        max-width: 100%;
+        width: 230px;
+    }
+
+    .order__title {
+        font-size: 26px;
+        margin-bottom: 18px;
+    }
+
+    .order__desc {
+        margin-bottom: 12px;
+    }
+
+    .order__price {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 490px) {
+    .order__img {
+        max-width: 100%;
+        width: 200px;
+    }
+
+    .order__title {
+        font-size: 22px;
+        margin-bottom: 16px;
+    }
+
+    .order__desc {
+        margin-bottom: 10px;
+    }
+
+    .order__price {
+        font-size: 12px;
+    }
+
+    .card-queen, .card-burger {
+        padding-left: 250px;
+    }
+
+    .card-pizza, 
+    .card-papajohn {
+        padding-right: 220px;
+    }
+
+    .feedback__image {
+        width: 340px;
+        height: 340px;
+    }
+
+    .feedback__desc {
+        font-size: 14px;
+    }
+
+    .feedback__author {
+        font-size: 20px;
+    }
+
+    .subauthor {
+        font-size: 11px;
+    }
+
+    .download__menu h5 {
+        font-size: 22px;
+    }
+
+    .footer {
+        padding: 50px 0;
+    }
+}
+
+@media (max-width: 460px) {
+    .product__title {
+        font-size: 16px;
+    }
+
+    .product__desc {
+        font-size: 12px;
+    }
+
+    .product__price,
+    .product__price--old {
+        font-size: 12px;
+    }
+
+    .btn--small {
+        width: 80px;
+        height: 25px;
+        font-size: 10px;
+    }
+
+    .feedback__text {
+        padding-left: 20px;
+    }
+}
+
+@media (max-width: 440px) {
+    .welcome__subtitle {
+        font-size: 10px;
+    }
+
+    .welcome__title {
+        font-size: 26px;
+        width: 190px;
+        margin-bottom: 45px;
+    }
+
+    .welcome__desc {
+        width: 180px;
+        font-size: 15px;
+        margin-bottom: 35px;
+    }
+
+    .order__img {
+        max-width: 100%;
+        width: 180px;
+    }
+
+    .order__title {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .order__desc {
+        margin-bottom: 8px;
+        font-size: 10px;
+    }
+
+    .order .btn {
+        margin-top: 8px;
+        width: 80px;
+        height: 25px;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 420px) {
+    .product__title {
+        font-size: 14px;
+    }
+
+    .product__desc {
+        font-size: 10px;
+    }
+
+    .product__price,
+    .product__price--old {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 370px) {
+    .welcome__title {
+        font-size: 20px;
+        width: 167px;
+        margin-bottom: 24px;
+    }
+
+    .welcome__desc {
+        width: 120px;
+        font-size: 14px;
+    } 
+
+    .header .btn {
+        width: 70px;
+        height: 28px;
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 320px){
+    .welcome {
+        padding-top: 115px;
+    } 
+
+    .welcome__subtitle {
+        font-size: 8px;
+    }
+
+    .welcome__title {
+        margin-bottom: 25px;
+        font-size: 18px;
+    }
+    
+    .welcome__desc {
+        margin-bottom: 25px;
+        font-size: 13px;
+    }
+
+    .order__img {
+        width: 150px;
+    }
+
+    .card-queen, 
+    .card-burger {
+        padding-left: 210px;
+    }
+
+    .feedback__image {
+        width: 288px;
+        height: 288px;
+    }
+
+    .feedback__desc {
+        width: 300px;
+    }
+
+    .feedback__text {
+        padding-left: 10px;
+    }
+
+    .download__menu h5 {
+        font-size: 20px;
     }
 }
     
+
+
