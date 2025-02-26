@@ -200,7 +200,7 @@ img {
     margin-top: -100px;
     padding: 220px 0px 330px 0px;
 
-    background-image: url("/images/burger.png");
+    background-image: url("./images/burger.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
