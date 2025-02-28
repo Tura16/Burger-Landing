@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: "Roboto";
-    src: url(./fonts/Roboto-Bold.woff2) format("woof2");
+    src: url(./fonts/Roboto-Bold.woff2) format("woff2");
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -10,7 +10,7 @@
 
 @font-face {
     font-family: "Roboto";
-    src: url(./fonts/Roboto-Medium.woff2) format("woof2");
+    src: url(./fonts/Roboto-Medium.woff2) format("woff2");
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -18,7 +18,7 @@
 
 @font-face {
     font-family: "Roboto";
-    src: url(./fonts/Roboto-Regular.woff2) format("woof2");
+    src: url(./fonts/Roboto-Regular.woff2) format("woff2");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -99,11 +99,17 @@ img {
 
     background: #f6762c;
 
-    transition: opacity 0.2s;
+    transition: 0.2s ease;
 }
 
 .btn:hover {
+    transform: scale(1.1);
     opacity: 0.8;
+}
+
+.btn:active {
+    transform: scale(0.90);
+    opacity: 0.5;
 }
 
 .btn--small {
@@ -114,6 +120,7 @@ img {
     height: 40px;
 
     margin-top: 11px;
+    transition: 0.2s ease;
 }
 
 
@@ -176,11 +183,12 @@ img {
 .header__nav a {
     font-size: 14px;
     opacity: 0.7;
-    transition: 0.2s;
+    transition: 0.2s ease;
 }
 
-.header__nav a:hover {
-    opacity: 0.9;
+.header__list li:hover {
+    transform: scale(1.1);
+    opacity: 0.7;
 }
 
 .header__nav a.active {
@@ -188,6 +196,12 @@ img {
     font-size: 15px;
     color: #fff;
     opacity: 1;
+}
+
+.header__list li:active {
+    transform: scale(0.90);
+    box-shadow: 0 2px 5px transparent;
+    opacity: 0.5;
 }
 
 
@@ -250,10 +264,18 @@ img {
     border-radius: 10px;
     overflow: hidden;
     text-align: center;
+    transition: 0.2s ease;
 }
 
 .food-list__card:hover {
     opacity: 0.8;
+    transform: scale(0.95);
+}
+
+.food-list__card:active {
+    transform: scale(0.90);
+    box-shadow: 0 2px 5px transparent;
+    opacity: 0.7;
 }
 
 .food-list__image {
@@ -432,17 +454,13 @@ img {
     height: 360px;
 }
 
-.feedback__image:hover {
-    opacity: 0.7;
-}
-
 .feedback__text {
     margin: 0;
     text-align: center;
 }
 
 .feedback__text::before {
-    content: url(./icons/svg);
+    content: url(../icons/svg);
 }
 
 .feedback__desc {
@@ -498,7 +516,13 @@ img {
 }
 
 .footer a:hover {
+    transform: scale(0.95);
     opacity: 0.6;
+}
+
+.footer a:active {
+    transform: scale(0.90);
+    opacity: 0.3;
 }
 
 .footer__contacts a {
@@ -518,8 +542,7 @@ img {
     justify-content: space-around;
     flex-wrap: wrap;
     align-items: center;
-    
-    
+    transition: 0.2s ease;
 }
 
 .footer__contacts {
@@ -547,16 +570,20 @@ img {
     gap: 158px;
 }
 
-.footer__title {
-    font-weight: 500;
-    font-size: 16px;
-    margin-bottom: 14px;
-    width: 107px;
-    height: 19px;
+.footer__inner-list li:hover {
+    transform: scale(0.95);
+}
+
+.footer__inner-list li:active {
+    transform: scale(0.90);
 }
 
 .footer__list-item {
     margin-top: 14px;
+}
+
+.footer__title {
+    margin-bottom: 10px;
 }
 
 .footer__socials {
@@ -579,7 +606,56 @@ img {
     position: relative;
 }
 
+.footer__icon-item:hover {
+    transform: scale(0.95);
+}
+
+.footer__icon-item:active {
+    transform: scale(0.90);
+}
+
 /** Медиа Адаптация */
+
+@media (hover: none) {
+   .food-list__card:hover {
+        opacity: 1;
+    }
+
+    .food-list__card:active {
+        transform: scale(0.95);
+        box-shadow: 0 2px 5px transparent;
+        opacity: 0.7;
+    }
+
+    .feedback__image:hover {
+        opacity: 1;
+    }
+
+    .btn:active {
+        transform: scale(0.90);
+        box-shadow: 0 2px 5px #f6762c;
+        opacity: 0.5;
+    }
+
+    .header__link:active {
+        transform: scale(0.90);
+        box-shadow: 0 2px 5px transparent;
+        opacity: 0.5;
+    }
+
+    .footer a:active {
+        transform: scale(0.90);
+        opacity: 0.3;
+    }
+
+    .footer__inner-list li:active {
+        transform: scale(0.90);
+    }
+
+    .footer__icon-item:active {
+        transform: scale(0.90);
+    }
+}
 
 @media (max-width: 1400px) {
     .footer .container {
