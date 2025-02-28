@@ -186,11 +186,6 @@ img {
     transition: 0.2s ease;
 }
 
-.header__list li:hover {
-    transform: scale(1.1);
-    opacity: 0.7;
-}
-
 .header__nav a.active {
     font-weight: 700;
     font-size: 15px;
@@ -198,9 +193,13 @@ img {
     opacity: 1;
 }
 
+.header__list li:hover {
+    transform: scale(0.95);
+    opacity: 0.5;
+}
+
 .header__list li:active {
     transform: scale(0.90);
-    box-shadow: 0 2px 5px transparent;
     opacity: 0.5;
 }
 
@@ -269,13 +268,6 @@ img {
 
 .food-list__card:hover {
     opacity: 0.8;
-    transform: scale(0.95);
-}
-
-.food-list__card:active {
-    transform: scale(0.90);
-    box-shadow: 0 2px 5px transparent;
-    opacity: 0.7;
 }
 
 .food-list__image {
@@ -460,7 +452,7 @@ img {
 }
 
 .feedback__text::before {
-    content: url(../icons/svg);
+    content: url(./icons/svg.svg);
 }
 
 .feedback__desc {
@@ -621,12 +613,6 @@ img {
         opacity: 1;
     }
 
-    .food-list__card:active {
-        transform: scale(0.95);
-        box-shadow: 0 2px 5px transparent;
-        opacity: 0.7;
-    }
-
     .feedback__image:hover {
         opacity: 1;
     }
@@ -637,9 +623,13 @@ img {
         opacity: 0.5;
     }
 
-    .header__link:active {
+   .header__list li:hover {
+        transform: scale(0.95);
+        opacity: 0.5;
+    }
+
+    .header__list li:active {
         transform: scale(0.90);
-        box-shadow: 0 2px 5px transparent;
         opacity: 0.5;
     }
 
@@ -819,9 +809,9 @@ img {
         display: block;
     }
 
-    .header__link {
+    .header__list li {
         color: #fff;
-        font-size: 21px;
+        font-size: 14px;
         display: block;
         padding: 10px 0;
     }
