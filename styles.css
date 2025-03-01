@@ -186,11 +186,20 @@ img {
     transition: 0.2s ease;
 }
 
+.header__link:focus-visible {
+    outline: 2px dashed #fff;
+    opacity: 1;
+}
+
 .header__nav a.active {
     font-weight: 700;
     font-size: 15px;
     color: #fff;
     opacity: 1;
+}
+
+.header .btn:focus-visible {
+    outline: 2px dashed #fff;
 }
 
 .header__list li:hover {
@@ -238,7 +247,11 @@ img {
 .welcome__desc {
     font-size: 18px;
     opacity: 0.7;
-    margin-bottom: 42px;
+    margin-bottom: 26px;
+}
+
+.welcome .btn:focus-visible {
+    outline: 2px dashed #fff;
 }
 
 /* ! 2-я  Секция Food-list */
@@ -342,6 +355,10 @@ img {
     margin-top: 10px;
 }
 
+.order .btn:focus-visible {
+    outline: 2px dashed #fff;
+}
+
 .order .container {
     display: flex;
     align-items: center;
@@ -368,6 +385,10 @@ img {
     background-position: center;
 
     border-radius: 20px;
+}
+
+.product .btn:focus-visible {
+    outline: 2px dashed #fff;
 }
 
 .product__card, .card-queen, .card-burger  {
@@ -499,6 +520,10 @@ img {
     width: 363px;
 }
 
+.download .btn:focus-visible {
+    outline: 2px dashed #fff;
+}
+
 
 /* ! Footer */
 
@@ -606,6 +631,10 @@ img {
     transform: scale(0.90);
 }
 
+.footer a:focus-visible {
+    outline: 2px dashed #fff;
+}
+
 /** Медиа Адаптация */
 
 @media (hover: none) {
@@ -683,7 +712,8 @@ img {
 
 @media (max-width: 1080px) {
     .welcome__desc {
-        width: 480px;
+        width: 500px;
+        margin-bottom: 26px;
     }
 }
 
@@ -736,6 +766,7 @@ img {
 @media (max-width: 768px) {
     .welcome__desc {
         width: 300px;
+        margin-bottom: 32px;
     }
 
     .order__img {
@@ -786,7 +817,7 @@ img {
     .header__burger-menu {
         display: inline-block;
         position: relative;
-        width: 40px;
+        width: 50px;
         height: 40px;
         border: none;
         background-color: transparent;
@@ -835,16 +866,22 @@ img {
 @media (max-width: 640px) {
     .welcome__desc {
         width: 210px;
+        font-size: 12px;
     }
 
     .welcome__title {
-        font-size: 38px;
-        width: 249px;
-        margin-bottom: 35px;
+        font-size: 34px;
+        width: 290px;
+        margin-bottom: 30px;
+    }
+
+    .welcome__text {
+        
     }
 
     .welcome__subtitle {
         margin-bottom: 20px;
+        font-size: 12px;
     }
 
     .order__title {
@@ -1009,14 +1046,14 @@ img {
 
     .welcome__title {
         font-size: 26px;
-        width: 190px;
-        margin-bottom: 45px;
+        width: 180px;
+        margin-bottom: 28px;
     }
 
     .welcome__desc {
         width: 180px;
-        font-size: 15px;
-        margin-bottom: 35px;
+        font-size: 13px;
+        margin-bottom: 30px;
     }
 
     .order__img {
@@ -1059,14 +1096,14 @@ img {
 
 @media (max-width: 370px) {
     .welcome__title {
-        font-size: 20px;
-        width: 167px;
-        margin-bottom: 24px;
+        font-size: 18px;
+        width: 150px;
+        margin-bottom: 20px;
     }
 
     .welcome__desc {
-        width: 120px;
-        font-size: 14px;
+        width: 150px;
+        font-size: 12px;
     } 
 
     .header .btn {
